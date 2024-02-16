@@ -17,5 +17,6 @@ ax.tick_params(labelsize=14)
 
 # set range for axis
 ax.axis([-50,51,-100,2600])
+ax.ticklabel_format(style='plain')
 
 plt.show()
