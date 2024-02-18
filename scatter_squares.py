@@ -19,4 +19,5 @@ ax.tick_params(labelsize=14)
 ax.axis([-50,51,-100,2600])
 ax.ticklabel_format(style='plain')
 
+plt.savefig('squares_plot.png',bbox_inches='tight')
 plt.show()
