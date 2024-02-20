@@ -4,11 +4,11 @@ from die import Die
 
 # Create a D6
 die1 = Die()
-die2 = Die()
+die2 = Die(10)
 
 # roll and store the resutls
-result1 =[die1.roll() for i in range(3000)]
-result2 =[die2.roll() for i in range(3000)]
+result1 =[die1.roll() for i in range(15000)]
+result2 =[die2.roll() for i in range(15000)]
 results = [i+j for i,j in zip(result1,result2)]
 
 # Analyze the results
@@ -21,5 +21,9 @@ for value in poss_results:
 print(frequencies)
 
 # Visualize
-fig = px.bar(x=poss_results,y=frequencies,title='results of rolling two D6 3000 times',labels={'x':'results','y':'frequency'})
+fig = px.bar(x=poss_results,y=frequencies,title='results of rolling a D10 and a D6 15000 times',labels={'x':'results','y':'frequency'})
+
+# customize
+fig.update_layout(xaxis_dtick=1)
+fig.write_html('dice_visual.html')
 fig.show()
